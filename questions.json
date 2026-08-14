@@ -1,0 +1,334 @@
+[
+  {
+    "id": 1,
+    "category": "Contingencies",
+    "difficulty": "Manager",
+    "title": "Legal settlement discussions",
+    "scenario": "A company is defending a lawsuit. Outside counsel initially believes the company will probably prevail.",
+    "timeline": [
+      {
+        "date": "Mar 1",
+        "event": "Outside counsel says the company will probably prevail."
+      },
+      {
+        "date": "Apr 15",
+        "event": "Plaintiff offers to settle for $20 million. The company rejects the offer."
+      },
+      {
+        "date": "May 1",
+        "event": "Company counsel recommends offering $12 million."
+      },
+      {
+        "date": "May 10",
+        "event": "The company offers $12 million."
+      },
+      {
+        "date": "May 15",
+        "event": "Plaintiff counters at $15 million."
+      },
+      {
+        "date": "May 20",
+        "event": "The parties agree in principle to settle for $14 million."
+      },
+      {
+        "date": "Jun 5",
+        "event": "The settlement agreement is signed."
+      },
+      {
+        "date": "Jul 1",
+        "event": "The company pays $14 million."
+      }
+    ],
+    "question": "Which event most clearly establishes the accounting trigger for recognizing the settlement obligation?",
+    "answers": [
+      "Apr 15 \u2014 the plaintiff first offers to settle",
+      "May 10 \u2014 the company makes its first offer",
+      "May 20 \u2014 the parties agree in principle on $14 million",
+      "Jun 5 \u2014 the formal agreement is signed",
+      "Jul 1 \u2014 the cash is paid"
+    ],
+    "correct": 2,
+    "explanation": "The key is when available evidence supports that a loss is probable and reasonably estimable. Agreement in principle is a strong recognition point; signing and payment are later legal/settlement events.",
+    "mode": "RECOGNIZE"
+  },
+  {
+    "id": 2,
+    "category": "Asset Loss",
+    "difficulty": "Senior",
+    "title": "Warehouse fire",
+    "scenario": "A fire severely damages a distribution center. The property is insured.",
+    "timeline": [
+      {
+        "date": "Jan 15",
+        "event": "The fire occurs and severely damages the building."
+      },
+      {
+        "date": "Jan 18",
+        "event": "Management estimates the property loss at $8 million."
+      },
+      {
+        "date": "Jan 25",
+        "event": "The insurer confirms that the event is covered."
+      },
+      {
+        "date": "Feb 10",
+        "event": "The insurer agrees to pay $7 million."
+      },
+      {
+        "date": "Mar 1",
+        "event": "The insurance proceeds are received."
+      }
+    ],
+    "question": "What is the first event that triggers recognition of the property loss?",
+    "answers": [
+      "Jan 15 \u2014 the fire occurs",
+      "Jan 18 \u2014 management estimates the loss",
+      "Jan 25 \u2014 insurance coverage is confirmed",
+      "Feb 10 \u2014 the insurer agrees to pay",
+      "Mar 1 \u2014 cash is received"
+    ],
+    "correct": 0,
+    "explanation": "The casualty event causes the asset loss. Measurement may be refined afterward. The insurance recovery is a separate accounting analysis.",
+    "mode": "RECOGNIZE"
+  },
+  {
+    "id": 3,
+    "category": "Inventory",
+    "difficulty": "Manager",
+    "title": "Demand collapse",
+    "scenario": "A company carries $40 million of inventory for a product whose market changes abruptly.",
+    "timeline": [
+      {
+        "date": "Q1",
+        "event": "Sales slow by 10%."
+      },
+      {
+        "date": "Q2",
+        "event": "A competitor launches a substantially better product."
+      },
+      {
+        "date": "Q3",
+        "event": "Market prices for the company's product fall 40%."
+      },
+      {
+        "date": "Q4",
+        "event": "Management decides to discontinue the product."
+      },
+      {
+        "date": "Next Q1",
+        "event": "The remaining inventory is sold at a substantial loss."
+      }
+    ],
+    "question": "Which event most clearly triggers a reassessment of inventory carrying value?",
+    "answers": [
+      "Q1 \u2014 sales slow by 10%",
+      "Q2 \u2014 competitor launches a better product",
+      "Q3 \u2014 market prices fall 40%",
+      "Q4 \u2014 management discontinues the product",
+      "Next Q1 \u2014 inventory is sold"
+    ],
+    "correct": 2,
+    "explanation": "A sharp market-price decline is direct evidence that carrying value may no longer be recoverable. The later sale merely realizes the economics already evident earlier.",
+    "mode": "ASSESS"
+  },
+  {
+    "id": 4,
+    "category": "Impairment",
+    "difficulty": "Controller",
+    "title": "Loss of a major customer",
+    "scenario": "A customer represents 28% of annual sales and is critical to one reporting unit.",
+    "timeline": [
+      {
+        "date": "Aug 1",
+        "event": "The customer complains about pricing."
+      },
+      {
+        "date": "Sep 15",
+        "event": "The customer begins a competitive bid process."
+      },
+      {
+        "date": "Oct 20",
+        "event": "Management concludes the customer will probably leave."
+      },
+      {
+        "date": "Nov 10",
+        "event": "The customer formally terminates the relationship."
+      },
+      {
+        "date": "Dec 31",
+        "event": "Revenue from the customer ends."
+      }
+    ],
+    "question": "Which event most clearly triggers an impairment assessment?",
+    "answers": [
+      "Aug 1 \u2014 pricing complaint",
+      "Sep 15 \u2014 competitive bid process",
+      "Oct 20 \u2014 management concludes departure is probable",
+      "Nov 10 \u2014 formal termination",
+      "Dec 31 \u2014 revenue ends"
+    ],
+    "correct": 2,
+    "explanation": "The accounting question begins when facts indicate that asset recoverability or fair value may have changed materially. Recognition of an impairment, however, requires the applicable impairment test.",
+    "mode": "ASSESS"
+  },
+  {
+    "id": 5,
+    "category": "Restructuring",
+    "difficulty": "Manager",
+    "title": "Employee termination",
+    "scenario": "Management develops and approves a one-time involuntary termination plan affecting 75 employees.",
+    "timeline": [
+      {
+        "date": "Jan 5",
+        "event": "Management begins discussing reductions."
+      },
+      {
+        "date": "Jan 20",
+        "event": "Management approves a detailed plan."
+      },
+      {
+        "date": "Jan 25",
+        "event": "Affected employees are notified and the offer cannot realistically be withdrawn."
+      },
+      {
+        "date": "Mar 31",
+        "event": "Employees stop working."
+      },
+      {
+        "date": "Apr 15",
+        "event": "Severance is paid."
+      }
+    ],
+    "question": "Which event is the best recognition trigger for the one-time termination benefits in this scenario?",
+    "answers": [
+      "Jan 5 \u2014 management begins discussion",
+      "Jan 20 \u2014 management approves the plan",
+      "Jan 25 \u2014 employees are notified and the offer is effectively irrevocable",
+      "Mar 31 \u2014 employment ends",
+      "Apr 15 \u2014 severance is paid"
+    ],
+    "correct": 2,
+    "explanation": "For one-time involuntary termination benefits, recognition generally depends on communication of a sufficiently detailed plan and satisfaction of the applicable criteria\u2014not merely an internal decision.",
+    "mode": "RECOGNIZE"
+  },
+  {
+    "id": 6,
+    "category": "Leases / Impairment",
+    "difficulty": "Controller",
+    "title": "Exit from a building",
+    "scenario": "The company decides to permanently leave a leased office but continues to use it during a four-month transition.",
+    "timeline": [
+      {
+        "date": "Feb 1",
+        "event": "Management decides to exit the office."
+      },
+      {
+        "date": "Feb 10",
+        "event": "The board approves the restructuring plan."
+      },
+      {
+        "date": "Mar 1",
+        "event": "Employees are told the office will close."
+      },
+      {
+        "date": "May 31",
+        "event": "Operations cease and the facility is fully vacated."
+      },
+      {
+        "date": "Jun 30",
+        "event": "The landlord takes possession."
+      }
+    ],
+    "question": "Which event is most directly associated with complete cessation of use?",
+    "answers": [
+      "Feb 1 \u2014 management decision",
+      "Feb 10 \u2014 board approval",
+      "Mar 1 \u2014 employee communication",
+      "May 31 \u2014 operations cease and the site is vacated",
+      "Jun 30 \u2014 landlord takes possession"
+    ],
+    "correct": 3,
+    "explanation": "The decision to exit may itself be an impairment indicator, while complete cessation of use occurs when the company actually stops using and vacates the site. Different accounting consequences can therefore have different triggers.",
+    "mode": "REALIZE"
+  },
+  {
+    "id": 7,
+    "category": "Contingencies",
+    "difficulty": "Controller",
+    "title": "Adverse court judgment",
+    "scenario": "A company is defending a material lawsuit and had previously concluded that loss was not probable.",
+    "timeline": [
+      {
+        "date": "Sep 3",
+        "event": "Trial begins."
+      },
+      {
+        "date": "Sep 18",
+        "event": "Outside counsel says the case has become more difficult but still believes loss is not probable."
+      },
+      {
+        "date": "Oct 2",
+        "event": "The court issues an adverse $25 million judgment."
+      },
+      {
+        "date": "Oct 5",
+        "event": "The company announces that it will appeal."
+      },
+      {
+        "date": "Nov 10",
+        "event": "The appeal is filed."
+      }
+    ],
+    "question": "Which event most clearly requires the company to reassess its loss contingency conclusion?",
+    "answers": [
+      "Sep 3 \u2014 trial begins",
+      "Sep 18 \u2014 counsel becomes less confident",
+      "Oct 2 \u2014 adverse judgment is issued",
+      "Oct 5 \u2014 company announces appeal",
+      "Nov 10 \u2014 appeal is filed"
+    ],
+    "correct": 2,
+    "explanation": "An adverse judgment is significant new evidence and requires an immediate reassessment of probability, measurement, and disclosure even if the company intends to appeal.",
+    "mode": "ASSESS"
+  },
+  {
+    "id": 8,
+    "category": "Subsequent Events",
+    "difficulty": "CAO",
+    "title": "Customer bankruptcy after year-end",
+    "scenario": "A major customer owes $9 million at December 31. The financial statements have not yet been issued.",
+    "timeline": [
+      {
+        "date": "Dec 31",
+        "event": "Receivable balance is $9 million and customer is paying slowly."
+      },
+      {
+        "date": "Jan 12",
+        "event": "Customer misses another scheduled payment."
+      },
+      {
+        "date": "Jan 25",
+        "event": "Customer files for bankruptcy."
+      },
+      {
+        "date": "Feb 5",
+        "event": "Company estimates recovery of only $2 million."
+      },
+      {
+        "date": "Feb 20",
+        "event": "Financial statements are issued."
+      }
+    ],
+    "question": "Which event provides the strongest evidence about conditions that may have existed at year-end?",
+    "answers": [
+      "Dec 31 \u2014 receivable exists",
+      "Jan 12 \u2014 missed payment",
+      "Jan 25 \u2014 bankruptcy filing",
+      "Feb 5 \u2014 recovery estimate",
+      "Feb 20 \u2014 financial statements are issued"
+    ],
+    "correct": 2,
+    "explanation": "A bankruptcy shortly after year-end can provide evidence about the customer's financial condition at the balance-sheet date, making it a classic subsequent-event judgment.",
+    "mode": "ASSESS"
+  }
+]

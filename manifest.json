@@ -1,9 +1,8 @@
 {
-  "name": "Trigger \u2014 Accounting Timing Challenge",
-  "short_name": "Trigger",
+  "name": "Triggernometry",
+  "short_name": "Triggernometry",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#0b1020",
-  "theme_color": "#111827",
-  "description": "A gamified accounting timing and judgment challenge."
+  "background_color": "#080d19",
+  "theme_color": "#0b1020"
 }

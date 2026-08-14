@@ -1,4 +1,201 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1020"><link rel="manifest" href="manifest.json"><title>Triggernometry</title><style>
-:root{--bg:#080d19;--p:#111827;--t:#f8fafc;--m:#aab4c5;--l:#2a3550;--a:#7dd3fc;--g:#34d399;--b:#fb7185;--y:#fbbf24}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:radial-gradient(circle at top,#16213b,#080d19 48%);color:var(--t)}button{font:inherit}.w{max-width:920px;margin:auto;padding:20px 16px 60px}.top{display:flex;justify-content:space-between;margin-bottom:18px}.brand{font-weight:950;letter-spacing:.08em}.muted{color:var(--m)}.score{text-align:right}.card{background:#111827f5;border:1px solid var(--l);border-radius:24px;padding:22px;box-shadow:0 25px 70px #0005}.hero h1{font-size:clamp(3rem,12vw,6rem);line-height:.85;margin:12px 0}.eye{color:var(--a);font-weight:900;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}.btn,.ans,.conf{border-radius:14px;padding:14px 16px;cursor:pointer}.btn{border:0;background:white;color:#111827;font-weight:900}.ans,.conf{background:#172033;color:white;border:1px solid var(--l)}.answers{display:grid;gap:9px;margin:16px 0}.ans{text-align:left}.ans.sel{outline:2px solid var(--a)}.ans.ok{outline:2px solid var(--g)}.ans.no{outline:2px solid var(--b)}.pills{margin:8px 0}.pill,.item{display:inline-block;border:1px solid var(--l);border-radius:99px;padding:6px 9px;margin:3px;color:var(--m);font-size:.78rem}.confrow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 17px}.conf.sel{outline:2px solid var(--a)}.fb{margin-top:18px;padding:17px;background:#0f172a;border:1px solid var(--l);border-radius:16px}.good{color:var(--g)}.bad{color:var(--b)}.reveal{margin-top:15px;padding:18px;border-radius:17px;border:1px solid #725f20;background:#28210d}.reveal.pen{border-color:#713246;background:#2a111a}.big{font-size:1.5rem;font-weight:950}.fine{color:#fde68a;font-style:italic}.pen .fine{color:#fecdd3}.prog{height:7px;background:#0f172a;border-radius:99px;overflow:hidden;margin:10px 0 18px}.bar{height:100%;background:var(--a)}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin:18px 0}.stat{background:#0f172a;border:1px solid var(--l);padding:14px;border-radius:14px}.stat b{display:block;font-size:1.5rem}</style></head><body><div class="w"><div class="top"><div><div class="brand">TRIGGERNOMETRY</div><div class="muted">What happened — and when does accounting care?</div></div><div class="score"><b id="s">0 pts</b><div id="c" style="color:var(--y)">Staff</div></div></div><main id="app"></main></div><script>
-let D,deck=[],i=0,score=0,hits=0,sel=[],mult=1,done=false,trophies=[],pens=[];const app=document.getElementById('app'),S=document.getElementById('s'),C=document.getElementById('c');const levels=[[0,'Staff'],[2500,'Senior'],[5000,'Manager'],[8500,'Director'],[12000,'Controller'],[17000,'CAO']];function sh(a){return[...a].sort(()=>Math.random()-.5)}function lvl(){let x='Staff';for(let z of levels)if(score>=z[0])x=z[1];return x}function hdr(){S.textContent=score.toLocaleString()+' pts';C.textContent=lvl()}function home(){app.innerHTML=`<section class="card hero"><div class="eye">Accounting judgment, regrettably gamified</div><h1>PULL<br>THE<br>TRIGGER.</h1><p class="muted">60% serious accounting. 40% corporate realism. Earn benefits whose fine print you should have read.</p><button class="btn" onclick="start()">Start the Close</button><div class="pills"><span class="item">🔎 Assess</span><span class="item">📚 Recognize</span><span class="item">🍕 Motivate</span></div></section>`}function start(){deck=sh(D.questions);i=score=hits=0;trophies=[];pens=[];hdr();render()}function render(){if(i>=deck.length)return results();let q=deck[i];sel=[];mult=1;done=false;app.innerHTML=`<section class="card"><div class="eye">Question ${i+1} of ${deck.length}</div><div class="prog"><div class="bar" style="width:${i/deck.length*100}%"></div></div><div class="pills"><span class="pill">${q.category}</span><span class="pill">${q.mode}</span></div><h2>${q.title}</h2><p class="muted">${q.scenario}</p><h3>${q.question}</h3>${q.correct.length>1?'<p class="muted">Select all that apply.</p>':''}<div class="answers">${q.answers.map((a,k)=>`<button id="a${k}" class="ans" onclick="pick(${k})">${String.fromCharCode(65+k)}. ${a}</button>`).join('')}</div><div class="eye">Confidence</div><div class="confrow"><button id="m1" class="conf sel" onclick="cm(1)">Low · 1×</button><button id="m15" class="conf" onclick="cm(1.5)">Medium · 1.5×</button><button id="m2" class="conf" onclick="cm(2)">High · 2×</button></div><button id="go" class="btn" onclick="submit()">Pull the Trigger</button><div id="fb"></div></section>`}function pick(k){if(done)return;let q=deck[i];if(q.correct.length>1)sel.includes(k)?sel=sel.filter(x=>x!=k):sel.push(k);else sel=[k];document.querySelectorAll('.ans').forEach((x,j)=>x.classList.toggle('sel',sel.includes(j)))}function cm(v){mult=v;document.querySelectorAll('.conf').forEach(x=>x.classList.remove('sel'));document.getElementById(v==1?'m1':v==1.5?'m15':'m2').classList.add('sel')}function eq(a,b){return a.length==b.length&&[...a].sort().every((x,j)=>x==[...b].sort()[j])}function submit(){if(!sel.length)return alert('Choose an answer.');let q=deck[i],right=eq(sel,q.correct);done=true;let d=right?Math.round(1000*mult):-Math.round(350*mult);score=Math.max(0,score+d);if(right)hits++;hdr();document.querySelectorAll('.ans').forEach((x,j)=>{x.disabled=true;if(q.correct.includes(j))x.classList.add('ok');if(sel.includes(j)&&!q.correct.includes(j))x.classList.add('no')});let pool=right?D.rewards:D.penalties,t=pool[Math.floor(Math.random()*pool.length)];(right?trophies:pens).push(t);document.getElementById('fb').innerHTML=`<div class="fb"><h3 class="${right?'good':'bad'}">${right?'✓ Correct':'✕ Missed trigger'} ${d>0?'+':''}${d} pts</h3><p>${q.explanation}</p><div class="reveal ${right?'':'pen'}"><div class="eye">${right?'Reward Unlocked':'Penalty Assigned'}</div><div class="big">${t.icon} ${t.name}</div><div class="fine">${t.fine}</div></div><p><button class="btn" onclick="next()">${i==deck.length-1?'Finish the Close':'Next Issue →'}</button></p></div>`;document.getElementById('go').style.display='none'}function next(){i++;render()}function results(){let pct=Math.round(hits/deck.length*100);app.innerHTML=`<section class="card"><div class="eye">Close Complete</div><h1 style="font-size:4rem">${pct}%</h1><div class="stats"><div class="stat">Correct<b>${hits}/${deck.length}</b></div><div class="stat">Score<b>${score.toLocaleString()}</b></div><div class="stat">Career<b>${lvl()}</b></div><div class="stat">Penalties<b>${pens.length}</b></div></div><h3>${pct>=80?'PASS — the books may close.':'REVIEW REQUIRED — National Office has additional questions.'}</h3><p class="muted">${pct>=80?'The auditors have only three follow-up questions. Miraculous.':'Please prepare a memo explaining why your answers were reasonable at the time.'}</p><div class="eye">Trophy Cabinet</div><div>${trophies.slice(-8).map(x=>`<span class="item">${x.icon} ${x.name}</span>`).join('')||'<span class="item">📎 Participation paperclip</span>'}</div><p><button class="btn" onclick="start()">Run Another Close</button></p></section>`}fetch('game-data.json').then(r=>r.json()).then(x=>{D=x;home()});if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<link rel="manifest" href="manifest.json">
+<title>Triggernometry</title>
+<style>
+:root{--bg:#080d19;--panel:#111827;--text:#f8fafc;--muted:#aab4c5;--line:#2a3550;--accent:#7dd3fc;--good:#34d399;--bad:#fb7185;--gold:#fbbf24}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#16213b,#080d19 48%);color:var(--text);min-height:100vh}
+button{font:inherit}
+.wrap{max-width:940px;margin:auto;padding:20px 16px 64px}
+.top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:18px}
+.brand{font-weight:950;letter-spacing:.09em}
+.muted{color:var(--muted)}
+.score{text-align:right}
+.card{background:#111827f5;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 25px 70px #0005}
+.hero h1{font-size:clamp(3rem,12vw,6rem);line-height:.85;margin:12px 0}
+.eye{color:var(--accent);font-weight:900;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+.btn,.ans,.conf{border-radius:14px;padding:14px 16px;cursor:pointer}
+.btn{border:0;background:white;color:#111827;font-weight:900}
+.ans,.conf{background:#172033;color:white;border:1px solid var(--line)}
+.answers{display:grid;gap:9px;margin:16px 0}
+.ans{text-align:left}
+.ans.sel{outline:2px solid var(--accent)}
+.ans.ok{outline:2px solid var(--good)}
+.ans.no{outline:2px solid var(--bad)}
+.pill,.item{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:6px 9px;margin:3px;color:var(--muted);font-size:.78rem}
+.confrow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 17px}
+.conf.sel{outline:2px solid var(--accent)}
+.fb{margin-top:18px;padding:17px;background:#0f172a;border:1px solid var(--line);border-radius:16px}
+.good{color:var(--good)} .bad{color:var(--bad)}
+.reveal{margin-top:15px;padding:18px;border-radius:17px;border:1px solid #725f20;background:#28210d;animation:pop .25s ease}
+.reveal.pen{border-color:#713246;background:#2a111a}
+@keyframes pop{from{transform:scale(.97);opacity:.2}to{transform:scale(1);opacity:1}}
+.big{font-size:1.5rem;font-weight:950}
+.fine{color:#fde68a;font-style:italic}
+.pen .fine{color:#fecdd3}
+.prog{height:7px;background:#0f172a;border-radius:99px;overflow:hidden;margin:10px 0 18px}
+.bar{height:100%;background:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin:18px 0}
+.stat{background:#0f172a;border:1px solid var(--line);padding:14px;border-radius:14px}
+.stat b{display:block;font-size:1.5rem}
+@media(max-width:600px){.card{padding:18px}.top{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top">
+<div><div class="brand">TRIGGERNOMETRY</div><div class="muted">What happened — and when does accounting care?</div></div>
+<div class="score"><b id="s">0 pts</b><div id="c" style="color:var(--gold)">Staff</div></div>
+</div>
+<main id="app"></main>
+</div>
+<script>
+let D,deck=[],i=0,score=0,hits=0,sel=[],mult=1,done=false,usedNames=new Set(),trophies=[],pens=[];
+const app=document.getElementById('app'),S=document.getElementById('s'),C=document.getElementById('c');
+const levels=[[0,'Staff'],[2500,'Senior'],[5000,'Manager'],[8500,'Director'],[12000,'Controller'],[17000,'CAO']];
+
+function sh(a){return [...a].sort(()=>Math.random()-.5)}
+function lvl(){let x='Staff';for(const z of levels)if(score>=z[0])x=z[1];return x}
+function hdr(){S.textContent=score.toLocaleString()+' pts';C.textContent=lvl()}
+function home(){
+app.innerHTML=`<section class="card hero">
+<div class="eye">Accounting judgment, regrettably gamified</div>
+<h1>PULL<br>THE<br>TRIGGER.</h1>
+<p class="muted">Serious accounting. Corporate realism. Earn benefits whose fine print you should have read.</p>
+<button class="btn" onclick="start()">Start the Close</button>
+<div><span class="item">🔎 Assess</span><span class="item">📚 Recognize</span><span class="item">🍕 Motivate</span></div>
+</section>`}
+function start(){
+deck=sh(D.questions);i=0;score=0;hits=0;sel=[];mult=1;done=false;usedNames=new Set();trophies=[];pens=[];hdr();render()
+}
+function render(){
+if(i>=deck.length)return results();
+let q=deck[i];sel=[];mult=1;done=false;
+app.innerHTML=`<section class="card">
+<div class="eye">Question ${i+1} of ${deck.length}</div>
+<div class="prog"><div class="bar" style="width:${i/deck.length*100}%"></div></div>
+<div><span class="pill">${q.category}</span><span class="pill">${q.mode}</span></div>
+<h2>${q.title}</h2>
+<p class="muted">${q.scenario}</p>
+<h3>${q.question}</h3>
+${q.correct.length>1?'<p class="muted">Select all that apply.</p>':''}
+<div class="answers">${q.answers.map((a,k)=>`<button id="a${k}" class="ans" onclick="pick(${k})">${String.fromCharCode(65+k)}. ${a}</button>`).join('')}</div>
+<div class="eye">Confidence</div>
+<div class="confrow">
+<button id="m1" class="conf sel" onclick="cm(1)">Low · 1×</button>
+<button id="m15" class="conf" onclick="cm(1.5)">Medium · 1.5×</button>
+<button id="m2" class="conf" onclick="cm(2)">High · 2×</button>
+</div>
+<button id="go" class="btn" onclick="submit()">Pull the Trigger</button>
+<div id="fb"></div>
+</section>`}
+function pick(k){
+if(done)return;
+let q=deck[i];
+if(q.correct.length>1) sel.includes(k)?sel=sel.filter(x=>x!==k):sel.push(k);
+else sel=[k];
+document.querySelectorAll('.ans').forEach((x,j)=>x.classList.toggle('sel',sel.includes(j)))
+}
+function cm(v){
+if(done)return;
+mult=v;
+document.querySelectorAll('.conf').forEach(x=>x.classList.remove('sel'));
+document.getElementById(v===1?'m1':v===1.5?'m15':'m2').classList.add('sel')
+}
+function eq(a,b){return a.length===b.length&&[...a].sort().every((x,j)=>x===[...b].sort()[j])}
+
+function chooseUnique(primary,secondary){
+let primaryAvail=primary.filter(x=>!usedNames.has(x.name));
+if(primaryAvail.length){
+let x=primaryAvail[Math.floor(Math.random()*primaryAvail.length)];
+usedNames.add(x.name);
+return {item:x,crossover:false};
+}
+let secondaryAvail=secondary.filter(x=>!usedNames.has(x.name));
+if(secondaryAvail.length){
+let x=secondaryAvail[Math.floor(Math.random()*secondaryAvail.length)];
+usedNames.add(x.name);
+return {item:x,crossover:true};
+}
+return {item:null,crossover:true};
+}
+
+function submit(){
+if(!sel.length)return alert('Choose an answer.');
+let q=deck[i],right=eq(sel,q.correct);done=true;
+let d=right?Math.round(1000*mult):-Math.round(350*mult);
+score=Math.max(0,score+d);if(right)hits++;hdr();
+
+document.querySelectorAll('.ans').forEach((x,j)=>{
+x.disabled=true;
+if(q.correct.includes(j))x.classList.add('ok');
+if(sel.includes(j)&&!q.correct.includes(j))x.classList.add('no')
+});
+
+let pickResult=right?chooseUnique(D.rewards,D.penalties):chooseUnique(D.penalties,D.rewards);
+let t=pickResult.item, cross=pickResult.crossover;
+let reveal;
+
+if(!t){
+reveal=`<div class="reveal ${right?'':'pen'}">
+<div class="eye">Inventory Exhausted</div>
+<div class="big">📎 Finance has run out of ideas</div>
+<div class="fine">Every prize and penalty has already been used. No repeats.</div>
+</div>`;
+}else{
+if(right && !cross)trophies.push(t);
+else if(right && cross)pens.push(t);
+else if(!right && !cross)pens.push(t);
+else trophies.push(t);
+
+let cls = (!right && !cross) || (right && cross) ? 'pen' : '';
+let heading = right
+ ? (cross?'Reward Inventory Exhausted — Penalty Assigned':'Reward Unlocked')
+ : (cross?'Penalty Inventory Exhausted — Reward Assigned':'Penalty Assigned');
+
+let extra = right && cross
+ ? 'Success creates opportunities.'
+ : (!right && cross ? 'Please do not interpret this as positive feedback.' : '');
+
+reveal=`<div class="reveal ${cls}">
+<div class="eye">${heading}</div>
+<div class="big">${t.icon} ${t.name}</div>
+<div class="fine">${t.fine}${extra?'<br><br>'+extra:''}</div>
+</div>`;
+}
+
+document.getElementById('fb').innerHTML=`<div class="fb">
+<h3 class="${right?'good':'bad'}">${right?'✓ Correct':'✕ Missed trigger'} ${d>0?'+':''}${d} pts</h3>
+<p>${q.explanation}</p>
+${reveal}
+<p><button class="btn" onclick="next()">${i===deck.length-1?'Finish the Close':'Next Issue →'}</button></p>
+</div>`;
+document.getElementById('go').style.display='none'
+}
+function next(){i++;render()}
+function results(){
+let pct=Math.round(hits/deck.length*100);
+let cab=trophies.slice(-8).map(x=>`<span class="item">${x.icon} ${x.name}</span>`).join('')||'<span class="item">📎 Participation paperclip</span>';
+app.innerHTML=`<section class="card">
+<div class="eye">Close Complete</div>
+<h1 style="font-size:4rem">${pct}%</h1>
+<div class="stats">
+<div class="stat">Correct<b>${hits}/${deck.length}</b></div>
+<div class="stat">Score<b>${score.toLocaleString()}</b></div>
+<div class="stat">Career<b>${lvl()}</b></div>
+<div class="stat">Penalties<b>${pens.length}</b></div>
+</div>
+<h3>${pct>=80?'PASS — the books may close.':'REVIEW REQUIRED — National Office has additional questions.'}</h3>
+<p class="muted">${pct>=80?'The auditors have only three follow-up questions. Miraculous.':'Please prepare a memo explaining why your answers were reasonable at the time.'}</p>
+<div class="eye">Trophy Cabinet</div><div>${cab}</div>
+<p><button class="btn" onclick="start()">Run Another Close</button></p>
+</section>`}
+fetch('game-data.json').then(r=>r.json()).then(x=>{D=x;home()});
+if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>

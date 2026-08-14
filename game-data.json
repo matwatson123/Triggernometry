@@ -25,39 +25,39 @@
       "type": "serious",
       "category": "Asset Loss",
       "title": "Building fire",
-      "scenario": "A fire severely damages an insured distribution center on January 15. Management estimates the damage on January 18; the insurer confirms coverage later.",
+      "scenario": "A fire severely damages a company-owned distribution center on January 15. Management assesses the damage over the following several days and estimates an $8 million loss on January 18.",
       "question": "What triggers recognition of the property loss?",
       "answers": [
-        "The fire damages the asset",
-        "Management estimates the loss",
-        "Insurance coverage is confirmed",
-        "The insurer agrees to pay",
-        "Cash is received"
+        "January 15 \u2014 the fire damages the asset",
+        "January 18 \u2014 management completes its estimate",
+        "When management approves the estimate",
+        "At the end of the accounting period",
+        "When repairs begin"
       ],
       "correct": [
         0
       ],
-      "explanation": "The casualty event causes the asset loss. Insurance recovery is a separate accounting analysis.",
+      "explanation": "The fire itself is the triggering event because that is when the asset is damaged. Measurement may take additional time, but the later estimate does not move the underlying economic event.",
       "mode": "RECOGNIZE"
     },
     {
       "id": 3,
       "type": "serious",
       "category": "Inventory",
-      "title": "Demand collapse",
-      "scenario": "A product's sales slow 10%, then a competitor launches a better product. In Q3 market prices for the company's product fall 40%. The product is discontinued in Q4.",
-      "question": "Which event most clearly triggers reassessment of inventory carrying value?",
+      "title": "Sudden collapse in product demand",
+      "scenario": "Sales of a product decline 5%. A competitor then launches a substantially better product. In Q3, market prices for the company's product fall 40%. Management decides to discontinue the product in Q4.",
+      "question": "Which event most clearly triggers reassessment of the inventory's carrying value?",
       "answers": [
-        "10% sales slowdown",
-        "Competitor launch",
-        "40% market-price decline",
-        "Decision to discontinue",
-        "Eventual sale at a loss"
+        "Sales decline 5%",
+        "Competitor launches a better product",
+        "Market prices fall 40%",
+        "Management decides to discontinue the product",
+        "Inventory is eventually sold at a loss"
       ],
       "correct": [
         2
       ],
-      "explanation": "The significant market-price decline is direct evidence that inventory valuation needs reassessment.",
+      "explanation": "The 40% market-price decline provides clear evidence that the inventory's carrying value needs to be reassessed. The earlier 5% sales decline alone is not sufficiently significant in this scenario, and waiting for discontinuation or sale would be too late.",
       "mode": "ASSESS"
     },
     {
@@ -65,19 +65,19 @@
       "type": "serious",
       "category": "Goodwill",
       "title": "Loss of a major customer",
-      "scenario": "A customer represents 28% of revenue of a reporting unit with significant goodwill. New facts cause management to conclude the likely customer loss may materially reduce the reporting unit's fair value.",
+      "scenario": "A customer represents 28% of the revenue of a reporting unit with significant goodwill. The customer begins a competitive bid process. Subsequently, management concludes the customer is likely to leave.",
       "question": "When should the company perform an interim goodwill impairment triggering-event assessment?",
       "answers": [
         "First customer complaint",
         "Competitive bid begins",
-        "When facts indicate the likely loss may materially affect reporting-unit fair value",
-        "Formal customer termination",
-        "Wait for annual goodwill test"
+        "Management concludes the customer is likely to leave",
+        "Customer formally terminates",
+        "Next annual goodwill test"
       ],
       "correct": [
         2
       ],
-      "explanation": "The trigger is the change in facts indicating it may be more likely than not that reporting-unit fair value is below carrying amount. Assessment does not automatically mean impairment.",
+      "explanation": "Once developing facts indicate the likely loss of this major customer could constitute a goodwill impairment triggering event, the company should perform an interim goodwill impairment assessment. This triggers the assessment, not necessarily an impairment charge.",
       "mode": "ASSESS"
     },
     {
@@ -85,19 +85,19 @@
       "type": "serious",
       "category": "Compensation",
       "title": "Established severance plan",
-      "scenario": "The company has a long-standing severance plan known and understood by employees. On January 20 the authorized decision-maker commits to terminate identified employees and the applicable recognition criteria are met. Employees are informed January 25.",
+      "scenario": "The company has a long-standing severance plan that is known and understood by employees. Employees terminated without cause receive specified severance benefits. Management discusses eliminating 75 positions. On January 20, the appropriate executive approves the termination of the identified employees. Employees are informed January 25. Employment ends March 31.",
       "question": "When is the severance obligation recognized?",
       "answers": [
-        "When reductions are first discussed",
-        "January 20 \u2014 authorized termination decision/commitment",
-        "January 25 \u2014 employees are informed",
+        "When management begins discussing the reductions",
+        "When the termination decision is approved",
+        "When employees are informed",
         "When employment ends",
         "When severance is paid"
       ],
       "correct": [
         1
       ],
-      "explanation": "For this established severance arrangement, the recognition point is the authorized termination decision/commitment when the applicable criteria are satisfied.",
+      "explanation": "Because the company has an established severance plan understood by employees, the accounting trigger is the termination decision, assuming the applicable recognition criteria are satisfied. Recognition does not wait for employee communication, termination of employment, or payment.",
       "mode": "RECOGNIZE"
     },
     {
@@ -105,20 +105,20 @@
       "type": "serious",
       "category": "Leases",
       "title": "Exit from a leased building",
-      "scenario": "The company decides to exit a leased office while continuing to occupy it and negotiating with the landlord.",
-      "question": "Which events can trigger relevant lease accounting consequences? Select all that apply.",
+      "scenario": "Management decides to permanently exit a leased office. The company continues occupying the building during the transition while simultaneously negotiating with the landlord.",
+      "question": "Which events could trigger relevant lease accounting consequences? Select all that apply.",
       "answers": [
-        "Management decision to exit",
-        "Board approval",
-        "Employee communication",
-        "Agreed contract amendment with landlord",
-        "Complete vacancy / cessation of use"
+        "Management decides to exit",
+        "Board approves the exit plan",
+        "Employees are told the office will close",
+        "A contract amendment is agreed with the landlord",
+        "The company completely ceases use and vacates the building"
       ],
       "correct": [
         3,
         4
       ],
-      "explanation": "An agreed amendment can trigger modification accounting, while complete cessation of use can trigger other relevant accounting consequences.",
+      "explanation": "An agreed lease amendment can trigger modification accounting. Separately, complete cessation of use or vacancy can trigger relevant impairment or abandonment considerations. Internal decisions, approval, or employee communication do not by themselves accomplish either event.",
       "mode": "SELECT ALL"
     },
     {
@@ -126,19 +126,19 @@
       "type": "serious",
       "category": "Contingencies",
       "title": "Adverse court judgment",
-      "scenario": "The company previously concluded loss in a material lawsuit was not probable. A court then issues an adverse $25 million judgment; the company intends to appeal.",
-      "question": "What most clearly requires immediate reassessment?",
+      "scenario": "The company has a material lawsuit outstanding and previously concluded that a loss was not probable. A court subsequently issues an adverse $25 million judgment. Management immediately announces that the company intends to appeal.",
+      "question": "Which event most clearly requires immediate reassessment of the loss contingency?",
       "answers": [
         "Trial begins",
-        "Counsel becomes less confident",
-        "Adverse judgment is issued",
-        "Company announces appeal",
-        "Appeal is filed"
+        "Counsel becomes somewhat less confident",
+        "The adverse judgment is issued",
+        "Management announces that it will appeal",
+        "The appeal is formally filed"
       ],
       "correct": [
         2
       ],
-      "explanation": "The adverse judgment is significant new evidence requiring immediate reassessment. An appeal does not make it irrelevant.",
+      "explanation": "The adverse judgment represents significant new evidence and requires immediate reassessment of recognition, measurement and disclosure. An intention to appeal does not make the judgment irrelevant.",
       "mode": "ASSESS"
     },
     {
@@ -146,19 +146,19 @@
       "type": "serious",
       "category": "Subsequent Events",
       "title": "Customer bankruptcy after year-end",
-      "scenario": "A major customer owes $9 million at December 31 and is already paying slowly. It files for bankruptcy January 25, before the financial statements are issued.",
-      "question": "What provides the strongest subsequent evidence about a condition that may have existed at year-end?",
+      "scenario": "A major customer owes the company $9 million at December 31 and was already experiencing payment difficulties at year-end. On January 25, before the company's financial statements are issued, the customer files for bankruptcy.",
+      "question": "What event provides the strongest subsequent evidence about a condition that may already have existed at year-end?",
       "answers": [
-        "Year-end receivable balance",
-        "Another missed payment",
-        "January 25 bankruptcy filing",
-        "Later recovery estimate",
-        "Financial-statement issuance"
+        "The December 31 receivable balance",
+        "Another missed payment in January",
+        "The January 25 bankruptcy filing",
+        "Management's subsequent recovery estimate",
+        "The date the financial statements are issued"
       ],
       "correct": [
         2
       ],
-      "explanation": "A bankruptcy shortly after year-end may provide additional evidence about financial distress existing at the balance-sheet date.",
+      "explanation": "The bankruptcy shortly after year-end may provide additional evidence about the customer's financial difficulty that already existed at the balance-sheet date and therefore may affect the December 31 estimate.",
       "mode": "ASSESS"
     },
     {
@@ -166,18 +166,18 @@
       "type": "serious",
       "category": "Subsequent Events",
       "title": "Fire after year-end",
-      "scenario": "A building is undamaged at December 31. On January 15, before financial statements are issued, a fire destroys it.",
-      "question": "Should the fire loss be recognized at December 31?",
+      "scenario": "A company-owned building is completely undamaged at December 31. On January 15, before the December financial statements are issued, a fire destroys the building.",
+      "question": "Should the fire loss be recognized in the December 31 financial statements?",
       "answers": [
-        "Yes \u2014 statements aren't issued",
-        "Yes \u2014 if material",
-        "No \u2014 it arose after year-end; consider disclosure",
+        "Yes \u2014 because the financial statements haven't been issued",
+        "Yes \u2014 if the loss is material",
+        "No \u2014 the fire represents a condition arising after year-end; consider subsequent-event disclosure",
         "No \u2014 subsequent events are never disclosed"
       ],
       "correct": [
         2
       ],
-      "explanation": "The fire reflects a condition arising after year-end, so it is generally nonrecognized, although material disclosure may be needed.",
+      "explanation": "The fire represents a new condition arising after the balance-sheet date. It therefore generally is not recognized at December 31, although a material subsequent event may require disclosure.",
       "mode": "RECOGNIZE"
     },
     {
@@ -185,19 +185,19 @@
       "type": "serious",
       "category": "Contingencies",
       "title": "Litigation range",
-      "scenario": "A litigation loss is probable. The reasonable estimate is $12\u201318 million and no amount is a better estimate than another.",
+      "scenario": "A litigation loss is probable. Management can reasonably estimate the loss as a range of $12\u201318 million, but no amount within that range is a better estimate than another.",
       "question": "How much should be accrued under US GAAP?",
       "answers": [
-        "$0",
+        "$0 until the case is settled",
         "$12 million",
-        "$15 million",
+        "$15 million \u2014 midpoint",
         "$18 million",
-        "Wait for settlement"
+        "Wait until counsel selects a single amount"
       ],
       "correct": [
         1
       ],
-      "explanation": "US GAAP generally accrues the low end when no amount within a reasonably estimated range is a better estimate.",
+      "explanation": "When a loss is probable and a range can be reasonably estimated but no amount within the range is a better estimate than another, US GAAP generally requires accrual of the low end of the range.",
       "mode": "MEASURE"
     },
     {
@@ -205,53 +205,34 @@
       "type": "serious",
       "category": "Contingencies",
       "title": "Reasonably possible lawsuit",
-      "scenario": "A material $20 million litigation loss is reasonably possible, but not probable.",
-      "question": "What is the appropriate response?",
+      "scenario": "Management and outside counsel conclude that a material $20 million litigation loss is reasonably possible, but not probable.",
+      "question": "What is the appropriate accounting response?",
       "answers": [
-        "Accrue $20m",
-        "Accrue $10m",
-        "No accrual; evaluate required disclosure",
-        "Do nothing until probable",
-        "Accrue when paid"
+        "Accrue $20 million",
+        "Accrue $10 million because the outcome is uncertain",
+        "Don't accrue the loss; evaluate the required disclosures",
+        "Do nothing until the loss becomes probable",
+        "Recognize the loss when cash is paid"
       ],
       "correct": [
         2
       ],
-      "explanation": "A reasonably possible but not probable loss is generally not accrued, but applicable disclosure requirements should be evaluated.",
+      "explanation": "A loss that is reasonably possible but not probable is generally not accrued, but the company must evaluate the applicable loss-contingency disclosure requirements.",
       "mode": "DISCLOSE"
     },
     {
       "id": 12,
-      "type": "serious",
-      "category": "Insurance",
-      "title": "Insurance recovery",
-      "scenario": "The company recognizes an $8 million casualty loss and expects its insurer to reimburse $7 million.",
-      "question": "How should the expected recovery affect the casualty loss?",
-      "answers": [
-        "Record only a net $1m loss",
-        "Delay the loss",
-        "Recognize the casualty loss and analyze recovery separately",
-        "Record the full recovery regardless of uncertainty"
-      ],
-      "correct": [
-        2
-      ],
-      "explanation": "The casualty loss and insurance recovery are separate accounting matters.",
-      "mode": "RECOGNIZE"
-    },
-    {
-      "id": 13,
       "type": "funny",
       "category": "People Leadership",
       "title": "The 60-hour solution",
-      "scenario": "Your accounting team has worked 60-hour weeks for three months because of persistent hiring challenges.",
+      "scenario": "Your accounting team has worked 60-hour weeks for three months because of persistent hiring challenges. Morale is deteriorating.",
       "question": "How should management improve morale?",
       "answers": [
-        "Fix the workload",
+        "Hire enough people and fix the workload",
         "Pizza party \u2014 one topping per employee",
-        "Free soda voucher for Sandy's \u2014 no refills",
-        "New Teams backgrounds",
-        "Laptop refresh \u2014 no tech support"
+        "Free voucher for a soda in Sandy's \u2014 no refills",
+        "Access to new company-approved fake office backgrounds in Teams",
+        "New laptop refresh \u2014 no tech support"
       ],
       "correct": [
         1
@@ -260,18 +241,18 @@
       "mode": "LEADERSHIP"
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "funny",
       "category": "Employee Engagement",
       "title": "Engagement crisis",
-      "scenario": "Finance engagement scores have fallen 23 points.",
+      "scenario": "The annual Finance engagement survey is complete. Scores have fallen 23 points.",
       "question": "What should leadership do?",
       "answers": [
-        "Address causes",
-        "Create a task force",
-        "Listening sessions",
+        "Address the underlying causes",
+        "Create a cross-functional task force",
+        "Schedule employee listening sessions",
         "Repeat the survey daily until results are satisfactory",
-        "Resilience webinar"
+        "Schedule a resilience webinar"
       ],
       "correct": [
         3
@@ -280,17 +261,17 @@
       "mode": "LEADERSHIP"
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "funny",
       "category": "Audit",
       "title": "The PBC loop",
-      "scenario": "The auditors request a reconciliation that was on Tab 3 of yesterday's workbook.",
+      "scenario": "The auditors request a reconciliation that was included on Tab 3 of the workbook you sent them yesterday.",
       "question": "What should you do?",
       "answers": [
         "Explain where Tab 3 is",
         "Forward yesterday's email",
-        "Schedule a meeting",
-        "Rename it FINAL_v4_UPDATED.xlsx and send it again"
+        "Schedule a meeting to understand the request",
+        "Rename the workbook FINAL_v4_UPDATED.xlsx and send it again"
       ],
       "correct": [
         3
@@ -299,11 +280,11 @@
       "mode": "AUDIT"
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "funny",
       "category": "Executive Communication",
       "title": "Close status",
-      "scenario": "The CFO asks whether close is on schedule. It is two days behind.",
+      "scenario": "The CFO asks whether quarter-end close is on schedule. You're two days behind.",
       "question": "What is the appropriate response?",
       "answers": [
         "No",
@@ -318,17 +299,17 @@
       "mode": "COMMUNICATE"
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "funny",
       "category": "Cybersecurity",
       "title": "Urgent CEO request",
-      "scenario": "An email apparently from the CEO asks you to buy $2,000 of gift cards and text the codes.",
+      "scenario": "You receive an email apparently from the CEO: URGENT \u2014 Please immediately purchase $2,000 of gift cards and text me the codes. I'm in a meeting so don't call me.",
       "question": "What should you do?",
       "answers": [
-        "Buy them quickly",
-        "Ask which denomination",
-        "Forward to all Finance asking if anyone knows whether it's real",
-        "Report it using the phishing process"
+        "Purchase the gift cards quickly",
+        "Reply asking which denomination",
+        "Forward it to everyone in Finance asking whether anyone knows if it's real",
+        "Report it using the company's phishing process"
       ],
       "correct": [
         2
@@ -337,17 +318,17 @@
       "mode": "SECURITY"
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "funny",
       "category": "Wellness",
       "title": "Workplace stress",
-      "scenario": "Finance leadership wants to reduce employee stress without reducing workload.",
-      "question": "Which initiative best demonstrates commitment to wellness?",
+      "scenario": "Finance leadership wants to demonstrate its commitment to employee wellness without reducing workload.",
+      "question": "Which initiative best accomplishes this objective?",
       "answers": [
-        "Reduce meetings",
+        "Reduce unnecessary meetings",
         "Increase staffing",
-        "Mandatory resilience webinar over lunch",
-        "Friday afternoon off"
+        "Mandatory resilience webinar scheduled over lunch",
+        "Give everyone Friday afternoon off"
       ],
       "correct": [
         2
@@ -356,33 +337,33 @@
       "mode": "WELLNESS"
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "funny",
       "category": "Technology",
       "title": "Digital transformation",
-      "scenario": "Finance's general ledger is slow, cumbersome and increasingly unsupported.",
-      "question": "What is the appropriate modernization strategy?",
+      "scenario": "Finance has just completed the implementation of the new Oracle system. The upload process is painfully slow, routine tasks take longer than before, and the Finance team is becoming increasingly frustrated.",
+      "question": "What is the appropriate response?",
       "answers": [
-        "Modern cloud ERP",
-        "Simplify chart of accounts",
-        "Unlock the previous version of Oracle GL",
-        "Clear browser cache"
+        "Optimize the new system",
+        "Provide additional training",
+        "Unlock the 2001 version of Oracle and issue new dot-matrix printers",
+        "Ask employees to be patient while the transformation journey continues"
       ],
       "correct": [
         2
       ],
-      "explanation": "Several features from 2014 have now been restored. Transformation complete.",
+      "explanation": "Correct. The upload process is now faster, provided nobody minds the noise. Digital transformation has entered its heritage phase.",
       "mode": "TECHNOLOGY"
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "funny",
       "category": "Performance Management",
       "title": "High performer",
-      "scenario": "Your employee is performing extremely well and requires little supervision.",
+      "scenario": "Your employee is performing extremely well and requires very little supervision.",
       "question": "How should you recognize their independence?",
       "answers": [
-        "More autonomy",
+        "Give them greater autonomy",
         "Promote them",
         "Increase quarterly check-ins to weekly for the next year",
         "Cancel unnecessary one-on-ones"
@@ -399,6 +380,11 @@
       "icon": "\ud83d\udcbb",
       "name": "Brand New Laptop",
       "fine": "Excel included. IT has disabled macros."
+    },
+    {
+      "icon": "\ud83d\uddb1\ufe0f",
+      "name": "Wireless Mouse",
+      "fine": "Batteries not included. Expense reimbursement denied as immaterial."
     },
     {
       "icon": "\ud83d\udfe9",
@@ -451,6 +437,11 @@
       "fine": "A mandatory 30-minute meeting has been scheduled to explain the initiative."
     },
     {
+      "icon": "\ud83e\uddd1\u200d\ud83d\udcbb",
+      "name": "Priority IT Support",
+      "fine": "Your ticket has been upgraded from Low to Normal."
+    },
+    {
       "icon": "\ud83d\udc8e",
       "name": "Meeting Cancelled",
       "fine": "No reschedule. No action items. You have been given 30 minutes of your life back."
@@ -459,12 +450,12 @@
   "penalties": [
     {
       "icon": "\ud83d\udc15",
-      "name": "Lunch With the Controller",
+      "name": "Lunch With the Controller \u2014 Dogs",
       "fine": "90-minute slideshow: Our Dogs Through the Years."
     },
     {
       "icon": "\ud83c\udfd5\ufe0f",
-      "name": "Lunch With the Controller II",
+      "name": "Lunch With the Controller \u2014 Cabin",
       "fine": "147 photographs from his cabin trip. Several are of the same sunset."
     },
     {
@@ -488,9 +479,19 @@
       "fine": "Your mentor has described himself as \u201ca huge podcast guy.\u201d"
     },
     {
+      "icon": "\ud83d\udcda",
+      "name": "Leadership Book Club",
+      "fine": "You have been assigned Chapters 1\u201314 and are leading Thursday's discussion."
+    },
+    {
       "icon": "\ud83c\udfe2",
       "name": "National Office Consultation",
       "fine": "No question has been submitted yet. First, they would like some background."
+    },
+    {
+      "icon": "\ud83e\uddfe",
+      "name": "Expense Report Audit",
+      "fine": "Please provide the itemized receipt for the $4.37 coffee purchased eight months ago."
     },
     {
       "icon": "\u23f1\ufe0f",
@@ -500,7 +501,7 @@
     {
       "icon": "\ud83e\uddd8",
       "name": "Stretch Assignment",
-      "fine": "Touch your toes five times before sending every email. Replies and forwards count."
+      "fine": "Touch your toes five times before sending every email. Replies and forwards count as new emails."
     },
     {
       "icon": "\u2622\ufe0f",
